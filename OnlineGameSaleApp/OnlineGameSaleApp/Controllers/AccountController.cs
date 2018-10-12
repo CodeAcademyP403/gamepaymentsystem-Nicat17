@@ -27,12 +27,12 @@ namespace OnlineGameSaleApp.Controllers
             Game game = _gameDbContext.Games.Find(id);
 
             string gameName = game.Name;
-            int gameId = game.Id;
+            string gameId = game.Id.ToString();
             decimal minAmount = game.MinAmount;
             decimal maxAmount = game.MaxAmount;
 
             HttpContext.Session.SetString("gameName", gameName);
-            HttpContext.Session.SetString("gameId", gameId.ToString());
+            HttpContext.Session.SetString("gameId", gameId);
             HttpContext.Session.SetString("minAmount", minAmount.ToString());
             HttpContext.Session.SetString("maxAmount", maxAmount.ToString());
 
